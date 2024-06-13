@@ -1,0 +1,71 @@
+# Camila Cabello API
+
+Camila Cabello API é uma aplicação CRUD básica desenvolvida em Node.js 
+utilizando Express, Sequelize e MySQL. Esta API permite gerenciar 
+informações sobre artistas e músicas, especificamente focada na cantora Camila Cabello.
+
+- Node.js (https://nodejs.org/)
+- MySQL (https://www.mysql.com/)
+- npm (Node Package Manager)
+
+# api - cami
+POST /api/artists - Cria um novo artista
+
+GET /api/artists - Lista todos os artistas
+
+GET /api/artists/:id - Obtém um artista por ID
+
+PUT /api/artists/:id - Atualiza um artista por ID
+
+DELETE /api/artists/:id - Exclui um artista por ID
+
+POST /api/songs - Cria uma nova música
+
+GET /api/songs - Lista todas as músicas
+
+GET /api/songs/:id - Obtém uma música por ID
+
+PUT /api/songs/:id - Atualiza uma música por ID
+
+DELETE /api/songs/:id - Exclui uma música por ID
+
+###  Utilização do Workbench para Banco de Dados
+
+Para visualizar e gerenciar o banco de dados MySQL utilizando o MySQL Workbench
+Usei o Workbench para visualizar e manipular os dados nas tabelas `Artists` e `Songs`.
+
+# test de rotas #
+
+curl -X POST http://localhost:3000/api/artists -H "Content-Type: application/json" -d '{"name":"Camila Cabello", "genre":"Pop"}'
+
+curl -X DELETE http://localhost:3000/api/artists/1
+
+## Configure as variáveis de ambiente
+Criei um arquivo ".env" na raiz do projeto e a
+dicionei as seguintes variáveis com as suas configurações:
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASSWORD=sua_senha
+    DB_NAME=camila_cabello_db
+    DB_DIALECT=mysql
+    PORT=3000
+
+## Configurei o banco de dados:
+1.Crie o banco de dados no MySQL:
+    CREATE DATABASE camila_cabello_db;
+    - Execute as migrações do Sequelize:
+    (npx sequelize-cli db:migrate)
+### Iniciar o Servidor
+2. Iniciei o servidor com o seguinte comando:
+    (npm start)
+    
+
+
+
+
+
+
+
+
+
+
